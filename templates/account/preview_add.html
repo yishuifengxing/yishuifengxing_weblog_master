@@ -1,0 +1,63 @@
+{% extends "admin.html" %}
+
+{% block content %}
+{% autoescape None %}
+<section class="content-header">
+    <h1>微电影管理系统</h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 预告管理</a></li>
+        <li class="active">添加预告</li>
+    </ol>
+</section>
+<section class="content" id="showcontent">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {% if msg == 'OK' %}
+                    <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-check"></i> 操作成功！</h4>
+                        预告片添加完成
+                    </div>
+                {% end %}
+                {% if msg == '预告片重复' %}
+                    <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-ban"></i> 操作失败！</h4>
+                        预告片重复
+                    </div>
+                {% end %}
+                <div class="box-header with-border">
+                    <h3 class="box-title">添加预告</h3>
+                </div>
+                <form method="post" action="preview_add" enctype="multipart/form-data">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="input_title">{{form.title.label}}</label>
+                            {{form.title}}
+                        </div>
+                        <div class="form-group">
+                            <label for="input_logo">{{form.logo.label}}</label>
+                            {{form.logo}}
+                            <img data-src="holder.js/700x320" style="margin-top:5px;" class="img-responsive"
+                                 alt="">
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        {{form.submit}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% end %}
+
+{% block js %}
+<scrip>
+    $(document).ready(function(){
+    $("#g-4").addClass("active");
+    $("#g-4-1").addClass("active");
+    });
+</scrip>
+{% end %}

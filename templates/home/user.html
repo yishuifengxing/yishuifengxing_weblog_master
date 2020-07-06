@@ -1,0 +1,87 @@
+{% extends "layout_login.html" %}
+
+{% block caa %}
+<style>
+ .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+</style>
+{% end %}
+{% block content %}
+{% include "menu.html" %}
+{% autoescape None %}
+<div class="col-md-9">
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;会员中心</h3>
+        </div>
+        <div class="panel-body">
+            <form method="post" action="user" enctype="multipart/form-data">
+                <fieldset>
+                    <div class="form-group">
+                        <label for="input_name"><span class="glyphicon glyphicon-user"></span>&nbsp;{{form.name.label}}</label>
+                        {{ form.name }}
+                    </div>
+                    {% if form.name.errors %}
+                        <div class="error-msg">  {{form.name.errors[-1]}}  </div>
+                    {% end %}
+                    {% if msg == '用户名重复' %}
+                        <div class="error-msg"> 用户名重复啦!!!  </div>
+                    {% end %}
+                    <div class="form-group">
+                        <label for="input_email"><span class="glyphicon glyphicon-envelope"></span>&nbsp;{{form.email.label}}</label>
+                        {{ form.email }}
+                    </div>
+                    {% if form.email.errors %}
+                    {% if msg == '邮箱已经注册' %}
+                        <div class="error-msg"> 邮箱已经注册啦!!!  </div>
+                    {% end %}
+                        <div class="error-msg">  {{form.email.errors[-1]}}  </div>
+                    {% end %}
+                    <div class="form-group">
+                        <label for="input_phone"><span class="glyphicon glyphicon-phone"></span>&nbsp;{{form.phone.label}}</label>
+                        {{ form.phone }}
+                    </div>
+                    {% if form.phone.errors %}
+                        <div class="error-msg">  {{form.phone.errors[-1]}}  </div>
+                    {% end %}
+                    {% if msg == '手机已经注册' %}
+                        <div class="error-msg"> 手机已经注册啦!!!  </div>
+                    {% end %}
+                    <div class="form-group">
+                        <label for="input_face"><span class="glyphicon glyphicon-picture"></span>&nbsp;{{form.face.label}}</label>
+
+                        <input type="file" name="face">
+                        {% if form.face.data %}
+                            <img src="{{static_url('' + form.face.data)}}" class="img-responsive img-rounded" style="width: 100px" >
+                        {% else %}
+                            <img src="{{static_url('face_upload/face.png')}}" class="img-responsive img-rounded" style="width: 100px">
+                        {% end %}
+                    </div>
+                    {% if form.face.errors %}
+                        <div class="error-msg">  {{form.face.errors[-1]}}  </div>
+                    {% end %}
+                    <div class="form-group">
+                        <label for="input_info"><span class="glyphicon glyphicon-edit"></span>&nbsp;{{form.info.label}}</label>
+                        {{ form.info }}
+                    </div>
+                    {% if form.info.errors %}
+                        <div class="error-msg">  {{form.info.errors[-1]}}  </div>
+                    {% end %}
+                    {{ form.submit }}
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+{% end %}
+
+{% block js %}
+<script>
+    $(document).ready(function(){
+         $("#m-1").addClass("active")
+    });
+</script>
+{% end %}

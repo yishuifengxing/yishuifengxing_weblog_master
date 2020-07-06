@@ -1,0 +1,95 @@
+{% extends "admin.html" %}
+
+{% block content %}
+{% autoescape None %}
+<section class="content-header">
+    <h1>微电影管理系统</h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> 文章管理</a></li>
+        <li class="active">添加文章</li>
+    </ol>
+</section>
+<section class="content" id="showcontent">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">添加文章</h3>
+                </div>
+                <form method="post" action="article_add" enctype="multipart/form-data">
+                    <div class="panel-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td style="width:10%">{{form.title.label}}</td>
+                                <td>
+                                    {{form.title}}
+                                </td>
+                                <td id="error_title" style="width:30%"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.info.label }}</td>
+                                <td>
+                                    {{form.info}}
+                                </td>
+                                <td id="error_info"></td>
+                            </tr>
+                            <tr>
+                                <td>{{form.logo.label}}</td>
+                                <td>
+                                    {{form.logo}}
+                                    <img src="holder.js/262x166" class="pull-left">
+                                </td>
+                                <td id="error_img"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.tag_id.label }}</td>
+                                <td>
+                                    {{ form.tag_id}}
+<!--                                    <select class="form-control" id="input_tag">-->
+<!--                                        <option>&#45;&#45;请选择标签&#45;&#45;</option>-->
+<!--                                    </select>-->
+                                </td>
+                                <td id="error_tag"></td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.artic.label }}</td>
+                                <td>
+                                    {{ form.artic}}
+<!--                                    <textarea id="input_content"></textarea>-->
+                                </td>
+                                <td id="error_content"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    {{form.submit}}
+<!--                                    <a class="btn btn-success pull-left" id="btn-sub">-->
+<!--                                        <span class="glyphicon glyphicon-edit"></span>-->
+<!--                                        编辑-->
+<!--                                    </a>-->
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% end %}
+
+{% block js %}
+<!--<script src="{{static_url('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>-->
+<script src="{{static_url('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{static_url('admin/bower_components/metisMenu/dist/metisMenu.min.js')}}"></script>
+<script src="{{static_url('admin/dist/js/sb-admin-2.js')}}"></script>
+<script src="//cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script type="text/javascript" src="{{static_url('admin/ueditor/ueditor.config.js')}}"></script>
+<script type="text/javascript" src="{{static_url('admin/ueditor/ueditor.all.js')}}"></script>
+<script type="text/javascript" src="{{static_url('admin/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+<script>
+	var ue = UE.getEditor('input_content', {
+		initialFrameWidth: "100%",
+		initialFrameHeight: "300",
+	});
+</script>
+{% end %}

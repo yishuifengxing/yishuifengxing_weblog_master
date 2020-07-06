@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteMappingsManager">
+    <list>
+      <list>
+        <remote-mappings server-id="python@1a896755-210e-48e4-85aa-0436578346da" />
+        <remote-mappings server-id="python@sftp://yishuifengxing@130.211.244.227:22/home/yishuifengxing/.virtualenvs/yishuifengxing_weblog/bin/python3.5" />
+        <remote-mappings server-id="python@ssh://root@113.116.88.152:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.89.12:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.90.246:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.89.51:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.90.151:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.89.41:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.90.253:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.89.123:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.88.227:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.88.214:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.91.115:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.90.210:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@192.168.31.172:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.91.204:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.91.40:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.91.19:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.90.202:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@113.116.90.134:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.90.138:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$USER_HOME$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.90.85:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.88.148:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@sftp://root@183.15.88.148:1022/usr/bin/python">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+        <remote-mappings server-id="python@ssh://root@183.15.88.132:1022/home/ubuntu/.local/share/virtualenvs/root-BuDEOXnJ/bin/python3.5">
+          <settings>
+            <list>
+              <mapping local-root="$PROJECT_DIR$" remote-root="/root/yishuifengxing_weblog" />
+            </list>
+          </settings>
+        </remote-mappings>
+      </list>
+    </list>
+  </component>
+</project>

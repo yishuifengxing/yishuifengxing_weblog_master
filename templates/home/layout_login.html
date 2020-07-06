@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+    <title>易水风行的博客</title>
+    <link rel="shortcut icon" href="{{static_url('base/images/logo.png')}}">
+    <link rel="stylesheet" href="{{static_url('base/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{static_url('base/css/bootstrap-movie.css')}}">
+    <link rel="stylesheet" href="{{static_url('base/css/animate.css')}}">
+    <style>
+        .navbar-brand>img {
+            display: inline;
+        }
+        /*web background*/
+            .container{
+                display:table;
+                height:100%;
+            }
+
+            .row{
+                display: table-cell;
+                vertical-align: middle;
+            }
+            /* centered columns styles */
+            .row-centered {
+                text-align:center;
+            }
+            .col-centered {
+                display:inline-block;
+                float:none;
+                text-align:left;
+                margin-right:-4px;
+            }
+            .r_main{
+                text-align: left; /*让div内部文字居中*/
+                background-color: #fff;
+                border-radius: 200px;
+                width: 1200px;
+                height: 550px;
+                margin: auto;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+                right: 100px;
+                bottom: 100px;
+            }
+            .main{
+                text-align: left; /*让div内部文字居中*/
+                background-color: #fff;
+                border-radius: 200px;
+                width: 1200px;
+                height: 350px;
+                margin: auto;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+                right: 100px;
+                bottom: 100px;
+            }
+
+    </style>
+    {% block caa %}{% end %}
+</head>
+
+<body>
+<div class="wrapper">
+    <!--导航-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!--小屏幕导航按钮和logo-->
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index" class="navbar-brand" style="width:250px;">
+                    <img src="{{static_url('base/images/logo.png')}}" style="height:30px;">&nbsp;易水风行
+                </a>
+            </div>
+            <!--小屏幕导航按钮和logo-->
+            <!--导航-->
+            <div class="navbar-collapse collapse">
+                <form class="navbar-form navbar-left" role="search" style="margin-top:18px;">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="请输入电影名！">
+                        <span class="input-group-btn">
+                            <a class="btn btn-default" href="search"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</a>
+                        </span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="curlink" href="/index_login/"><span class="glyphicon glyphicon-film"></span>&nbsp;电影</a>
+                    </li>
+                    <li>
+                        <a class="curlink" href="/article/"><span class="glyphicon glyphicon-book"></span>&nbsp;文章</a>
+                    </li>
+                    <li>
+                        <a class="curlink" href="/music"><span class="glyphicon glyphicon-music"></span>&nbsp;音乐</a>
+                    </li>
+                    <li>
+                        <a class="curlink" href="/logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;退出</a>
+                    </li>
+                    <li>
+                        <a class="curlink" href="/user"><span class="glyphicon glyphicon-user"></span>&nbsp;会员</a>
+                    </li>
+                    <li>
+                        <a class="curlink" href="/account_login"><span class="glyphicon glyphicon-user"></span>&nbsp;管理</a>
+                    </li>
+                </ul>
+            </div>
+            <!--导航-->
+
+        </div>
+    </nav>
+    <!--导航-->
+    <!--内容-->
+    <div class="container" style="margin-top:76px">
+        {% block content %}{% end %}
+    </div>
+    <!--内容-->
+    <!--底部-->
+<!--    <footer class="footer navbar-fixed-bottom ">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-11">-->
+<!--                    <p>-->
+<!--                        ©&nbsp;2019&nbsp;易水风行的Weblog&nbsp;京ICP备 13046642号-2-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </footer>-->
+    <!--底部-->
+    <footer class="main-footer">
+<!--        <div class="pull-right hidden-xs">-->
+<!--            <b>版本</b> 1.0-->
+<!--        </div>-->
+        <strong>版权 &copy; 2017-2018 归<a href="">易水风行</a>.</strong> 所有
+    </footer>
+</div>
+<script src="{{static_url('base/js/jquery.min.js')}}"></script>
+<script src="{{static_url('base/js/bootstrap.min.js')}}"></script>
+<script src="{{static_url('base/js/jquery.singlePageNav.min.js')}}"></script>
+<script src="{{static_url('base/js/wow.min.js')}}"></script>
+<script src="{{static_url('lazyload/jquery.lazyload.min.js')}}"></script>
+<script src="//cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script>
+    $(function() {
+        new WOW().init();
+    })
+
+</script>
+<script>
+    $(document).ready(function() {
+        $("img.lazy").lazyload({
+            effect: "fadeIn"
+        });
+    });
+</script>
+{% block js %}{% end %}
+
+
+</body>
+</html>

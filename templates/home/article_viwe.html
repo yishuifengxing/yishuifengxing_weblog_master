@@ -1,0 +1,279 @@
+{% extends "layout_login.html" %}
+{% block css %}
+<!--播放页面-->
+    <link rel="stylesheet" type="text/css" href="{{static_url('jwplayer/skins/stormtrooper.css')}}">
+    <script type="text/javascript" src="{{static_url('ueditor/ueditor.config.js')}}"></script>
+    <script type="text/javascript" src="{{static_url('ueditor/ueditor.all.js')}}"></script>
+    <script type="text/javascript" src="{{static_url('ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+    <script>
+        SyntaxHighlighter.all();
+    </script>
+    <!--播放页面-->
+<style>
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+            padding-right: 3px;
+            padding-left: 3px;
+</style>
+{% end %}
+{% block content %}
+{% autoescape None %}
+<div class="row">
+        <div class="col-md-8">
+            <div id="moviecontainer"></div>
+            {% for f in items_article %}
+            <td class="rigthtd" style="width: 40%">
+                <div style="overflow-y:scroll;height:800px;white-space:pre-wrap">
+                    {{f.content}}
+                </div>
+            </td>
+            {% end %}
+        </div>
+        <div class="col-md-4" style="height:500px;">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-facetime-video"></span>&nbsp;文章介绍</h3>
+                </div>
+                <div class="panel-body" style="height:459px;">
+                    {% for v in items_article %}
+                    <table class="table">
+                        <tr>
+                            <td style="width:30%;color:#ccc;font-weight:bold;font-style:italic;">
+                                <span class="glyphicon glyphicon-film"></span>&nbsp;文章名称
+                            </td>
+                            <td>{{v[1]}}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                <span class="glyphicon glyphicon-tag"></span>&nbsp;标签
+                            </td>
+                            <td>{{v[3]}}</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                <span class="glyphicon glyphicon-time"></span>&nbsp;文章字数
+                            </td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                <span class="glyphicon glyphicon-map-marker"></span>&nbsp;地区
+                            </td>
+                            <td>中国</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                <span class="glyphicon glyphicon-calendar"></span>&nbsp;发布时间
+                            </td>
+
+                            <td>{{v[6]}}</td>
+                        </tr>
+<!--                        <tr>-->
+<!--                            <td style="color:#ccc;font-weight:bold;font-style:italic;">-->
+<!--                                <span class="glyphicon glyphicon-play"></span>&nbsp;查看数量-->
+<!--                            </td>-->
+<!--                            <td>{{0}}</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td style="color:#ccc;font-weight:bold;font-style:italic;">-->
+<!--                                <span class="glyphicon glyphicon-comment"></span>&nbsp;评论数量-->
+<!--                            </td>-->
+<!--                            <td>{{0}}</td>-->
+<!--                        </tr>-->
+                        <tr>
+                            <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                <span class="glyphicon glyphicon-picture"></span>&nbsp;文章简介
+                            </td>
+                            <td>
+                            {{v[2]}}
+                            </td>
+                        </tr>
+                    </table>
+                    {% end %}
+                </div>
+            </div>
+        </div>
+<!--        <div class="col-md-12" style="margin-top:6px;">-->
+<!--            <div class="panel panel-danger">-->
+<!--                <div class="panel-heading">-->
+<!--                    <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span>&nbsp;文章评论</h3>-->
+<!--                </div>-->
+<!--                <div class="panel-body">-->
+<!--                    {% if current_user == None %}-->
+<!--                    <div class="alert alert-danger alert-dismissible" role="alert">-->
+<!--                        <button type="button" class="close" data-dismiss="alert">-->
+<!--                            <span aria-hidden="true">×</span>-->
+<!--                            <span class="sr-only">Close</span>-->
+<!--                        </button>-->
+<!--                        <strong>请先<a href="login" target="_blank" class="text-info">登录</a>，才可参与评论！</strong>-->
+<!--                    </div>-->
+<!--                    {% end %}-->
+<!--                    <ol class="breadcrumb" style="margin-top:6px;">-->
+<!--                        <li>全部评论({{count}})</li>-->
+<!--                    </ol>-->
+<!--                    {% if current_user %}-->
+<!--                    <form method="post" action="play" enctype="multipart/form-data">-->
+<!--                        <div class="form-group">-->
+<!--                            <div>-->
+<!--&lt;!&ndash;                                <label for="input_content">{{form.comment.label}}</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                {{form.comment}}&ndash;&gt;-->
+<!--                                <textarea id="container" style="width:100%;height:100px;"></textarea>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-xs-12" id="error_content"></div>-->
+<!--                        </div>-->
+<!--&lt;!&ndash;                            {{form.submit}}&ndash;&gt;-->
+<!--                        <a class="btn btn-success" id="btn-sub" ><span class="glyphicon glyphicon-edit"></span>&nbsp;提交评论</a>-->
+<!--                        <a class="btn btn-danger" id="btn-col"><span class="glyphicon glyphicon-heart"></span>&nbsp;收藏文章</a>-->
+<!--                    </form>-->
+<!--                    <div class="col-md-12">-->
+<!--                        <font style="color:green" id="show_col_msg"></font>-->
+<!--                    </div>-->
+<!--                    <div class="clearfix"></div>-->
+<!--                    <div class="col-md-12">-->
+<!--                        <font style="color:green" id="movie_col_msg"></font>-->
+<!--                    </div>-->
+<!--                    <div class="clearfix"></div>-->
+<!--                    {% end %}-->
+<!--                    <ul class="commentList">-->
+<!--                        {% for c in items %}-->
+<!--                        <li class="item cl">-->
+<!--                            <a href="user">-->
+<!--                                <i class="avatar size-L radius">-->
+<!--                                    <img class="img-responsive" alt="50x50" src="{{c[5]}}"  style="border:1px solid #abcdef;">-->
+<!--                                </i>-->
+<!--                            </a>-->
+<!--                            <div class="comment-main">-->
+<!--                                <header class="comment-header">-->
+<!--                                    <div class="comment-meta">-->
+<!--                                        <a class="comment-author" href="user">{{c[3]}}</a>-->
+<!--                                        评论于-->
+<!--                                        <time title="2016-12-07 09:12:51" datetime="2016-12-07 09:12:51">{{c[4]}}</time>-->
+<!--                                    </div>-->
+<!--                                </header>-->
+<!--                                <div class="comment-body">-->
+<!--                                    {{c[1]}}-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </li>-->
+<!--                        {% end %}-->
+<!--                    </ul>-->
+<!--                    <div class="col-md-12 text-center">-->
+<!--                        <nav aria-label="Page navigation">-->
+<!--                            <ul class="pagination">-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" aria-label="First">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <span aria-hidden="true">首页</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" aria-label="Previous">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <span aria-hidden="true">上一页</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li><a href="#">1&nbsp;/&nbsp;10</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" aria-label="Next">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <span aria-hidden="true">下一页</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <li>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <a href="#" aria-label="Last">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <span aria-hidden="true">尾页</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </li>&ndash;&gt;-->
+<!--                                {% raw str_page %}-->
+<!--                            </ul>-->
+<!--                        </nav>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
+{% end %}
+{% block js %}
+<script src="{{static_url('admin/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{static_url('admin/bower_components/metisMenu/dist/metisMenu.min.js')}}"></script>
+<script src="{{static_url('admin/dist/js/sb-admin-2.js')}}"></script>
+<script src="//cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
+<script type="text/javascript" src="{{static_url('admin/ueditor/ueditor.config.js')}}"></script>
+<script type="text/javascript" src="{{static_url('admin/ueditor/ueditor.all.js')}}"></script>
+<script type="text/javascript" src="{{static_url('admin/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+<script type="text/javascript">
+    var config = {
+        initialFrameWidth: null,
+        initialFrameHeight: 200,
+    }
+    var ue = UE.getEditor('container', config);
+
+</script>
+<script>
+    $(document).ready(function(){
+        $("#btn-sub").click(function(){
+            var mid = '{{v[0]}}';
+            // var ue = UE.getEditor('container');
+            var content = UE.getEditor('container').getContent();
+            $.ajax({
+                url:"/play ",
+                type:"post",
+                data:"mid="+mid+"&content="+encodeURI(content),
+                dataType:"json",
+                // function (callback) {
+                //     var ret_dic = JSON.parse(callback);
+                //     <!--这里只是为了展示status属性的用法，所以加上了多余的判断-->
+                //     if (ret_dic.status) {
+                //         alert(ret_dic.message);
+                //     } else {
+                //         alert(ret_dic.message);
+                //     }
+                // }
+                success:function(res){
+                    if(res.ok == 1){
+                        $("#show_col_msg").empty();
+                        $("#show_col_msg").append("评论提交成功！");
+                    }else{
+                        $("#show_col_msg").empty();
+                        $("#show_col_msg").append("请输入评论！");
+                    }
+                }
+
+            })
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $("#btn-col").click(function(){
+            var m_c_id = '{{v[0]}}';
+            // var ue = UE.getEditor('container');
+            // var content = UE.getEditor('input_content').getContent();
+            $.ajax({
+                url:"/play ",
+                type:"post",
+                data:"m_c_id="+m_c_id,
+                dataType:"json",
+                // function (callback) {
+                //     var ret_dic = JSON.parse(callback);
+                //     <!--这里只是为了展示status属性的用法，所以加上了多余的判断-->
+                //     if (ret_dic.status) {
+                //         alert(ret_dic.message);
+                //     } else {
+                //         alert(ret_dic.message);
+                //     }
+                // }
+                success:function(res){
+                    if(res.ok == 2){
+                        $("#movie_col_msg").empty();
+                        $("#movie_col_msg").append("收藏成功！");
+                    }else{
+                        $("#movie_col_msg").empty();
+                        $("#movie_col_msg").append("已经收藏！");
+                    }
+                }
+
+            })
+        });
+    });
+
+</script>
+{% end %}
