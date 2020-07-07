@@ -3,11 +3,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import *
 # HOSTNAME = '130.211.244.227'
 HOSTNAME = '172.17.0.1'
-USERNAME = 'yishuifengxing'
+USERNAME = ''#数据库名称
 # USERNAME = 'root'
-PASSWORD = '20160828307@86'
+PASSWORD = ''#填写数据库密码
 # PORT = '3306'
-PORT = '3307'
+PORT = ''#端口号
 DATABASE = 'yishuifengxing_weblog'
 Db_url = 'mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8'%(
     USERNAME,
